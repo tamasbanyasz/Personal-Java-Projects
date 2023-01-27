@@ -1,4 +1,5 @@
 
+public class gameResult {
 	
 	private int indexNumberOfPlayer;
 	private final int mapSize;
