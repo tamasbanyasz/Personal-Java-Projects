@@ -1,4 +1,7 @@
 
+import java.util.Scanner;
+
+public class TicTacToe {
 
 		static final int mapSize = 3;
 		public static int indexNumberOfPlayer = 0;
