@@ -1,16 +1,16 @@
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TicTacToe {
 
 		static final int mapSize = 3;
 		public static int indexNumberOfPlayer = 0;
-		static Scanner scanner = new Scanner(System.in);
 
 
 	public static void main(String[] args) {
 		String[] players = {"O", "X"};
-		
+		playerInput playerInput = new playerInput();
 		gameMap gameMap = new gameMap(mapSize);
 		
 		gameResult gameResult = new gameResult(mapSize);
@@ -18,7 +18,7 @@ public class TicTacToe {
 		while (true) {
 			System.out.println("Player " + players[indexNumberOfPlayer] + " turn!");
 
-			int[] selectedRowAndColumn = selectingRowAndColumn();
+			int[] selectedRowAndColumn = playerInput.selectingRowAndColumn();
 			
 			gameMap.displayPlayersHit(selectedRowAndColumn, players, indexNumberOfPlayer);
 			gameMap.displayMap();
@@ -32,15 +32,6 @@ public class TicTacToe {
 				break;
 			}
 		}
-	}
-
-	static int[] selectingRowAndColumn() {
-		System.out.print("Select a row: ");
-		int selectedRow = scanner.nextInt();
-		System.out.print("Select a column: ");
-		int selectedColumn = scanner.nextInt();
-		
-		return new int[] {selectedRow, selectedColumn};	
 	}
 	
 	static void turnPlayer(String[] players) {
