@@ -1,5 +1,7 @@
 package LetterMatrix;
 
+import java.util.Arrays;
+
 import AppendLetters.AppendLetter;
 
 public class SnailLetterMatrix {
@@ -19,6 +21,16 @@ public class SnailLetterMatrix {
 		System.out.println("                ");
 		System.out.println(appenedLetters);
 		
+		String[] lettersInArray = appenedLetters.toString().replaceAll(" ","").split("");
+		System.out.println(Arrays.toString(lettersInArray));
+		swap(lettersInArray, 1, 4);
+		swap(lettersInArray, 3, 7);
+		swap(lettersInArray, 4, 7);
+		swap(lettersInArray, 5, 8);
+		swap(lettersInArray, 7, 9);
+		swap(lettersInArray, 6, 7);
+
+		System.out.println(Arrays.toString(lettersInArray));
 	}
 	
 	static void createMatrix(String[] words, String[][] matrix) {
@@ -52,5 +64,10 @@ public class SnailLetterMatrix {
 			}System.out.println();
 		}	
 	}
-
+	
+	static <T> void swap(T[] array, int index1, int index2) {
+		T temp = array[index1];
+		array[index1] = array[index2];
+		array[index2] = temp;
+	}
 }
