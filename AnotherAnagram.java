@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class AnotherAnagram {
+	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
@@ -21,34 +22,34 @@ public class AnotherAnagram {
         	String[] arrayOfFirstWord = firstWord.toLowerCase().split("");
         	String[] arrayOfSecondWord = secondWord.toLowerCase().split("");
         
-        while (arrayIndex < firstWord.length()) {
+        	while (arrayIndex < firstWord.length()) {
 
-        	if (arrayOfFirstWord.length != arrayOfSecondWord.length) {
-        		break;
-        	}
-        	String letterToSearch = arrayOfFirstWord[arrayIndex];
+        		if (arrayOfFirstWord.length != arrayOfSecondWord.length) {
+        			break;
+        		}
+        		String letterToSearch = arrayOfFirstWord[arrayIndex];
         	
-        	for (int i = 0; i < arrayOfFirstWord.length; i++) {
-        		if (letterToSearch.equals(arrayOfFirstWord[i])) {
-        			numberOfSameLettersInFirstWord++;
-        		for (int j = 0; j < arrayOfFirstWord.length; j++) {
-        			if (letterToSearch.equals(arrayOfSecondWord[j])) {
-        				numberOfSameLettersInSecondWord++;
+        		for (int i = 0; i < arrayOfFirstWord.length; i++) {
+        			if (letterToSearch.equals(arrayOfFirstWord[i])) {
+        				numberOfSameLettersInFirstWord++;
+        			for (int j = 0; j < arrayOfFirstWord.length; j++) {
+        				if (letterToSearch.equals(arrayOfSecondWord[j])) {
+        					numberOfSameLettersInSecondWord++;
+        				}
         			}
-        		}
-        		}
-            	}
+        			}
+            		}	
         	
-        	numberOfSameLettersInSecondWord = numberOfSameLettersInSecondWord / numberOfSameLettersInFirstWord;
-        	if (lettersAreNotSame(numberOfSameLettersInFirstWord, numberOfSameLettersInSecondWord, arrayIndex, firstWord, secondWord)) {
-        		return false;
-        	} 
-        	if (arrayIndex == arrayOfFirstWord.length-1 && arrayIndex == arrayOfSecondWord.length-1) {
-        		return true;
-        	}
-            	arrayIndex ++;
-            	numberOfSameLettersInFirstWord = 0;
-            	numberOfSameLettersInSecondWord = 0;
+        		numberOfSameLettersInSecondWord = numberOfSameLettersInSecondWord / numberOfSameLettersInFirstWord;
+        		if (lettersAreNotSame(numberOfSameLettersInFirstWord, numberOfSameLettersInSecondWord, arrayIndex, firstWord, secondWord)) {
+        			return false;
+        		}	 
+        		if (arrayIndex == arrayOfFirstWord.length-1 && arrayIndex == arrayOfSecondWord.length-1) {
+        			return true;
+        		}
+            		arrayIndex ++;
+            		numberOfSameLettersInFirstWord = 0;
+            		numberOfSameLettersInSecondWord = 0;
         	}
 		return false;
 	}
@@ -58,9 +59,9 @@ public class AnotherAnagram {
 		boolean lettersAreNotSame = false;
 		
 		if (sameNumber1 != sameNumber2) {
-    		
 			lettersAreNotSame = true;
 		}
 		return lettersAreNotSame;
 	}
 }
+
