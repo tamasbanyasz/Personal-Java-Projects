@@ -1,67 +1,56 @@
 import java.util.Scanner;
 
 public class AnotherAnagram {
-	
+
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+	    Scanner scanner = new Scanner(System.in);
 		
-		String firstWord = scanner.next();
-        	String secondWord = scanner.next();
+            String firstWord = scanner.next();
+            String secondWord = scanner.next();
         
-        	scanner.close();
+            scanner.close();
         
-	    	boolean ret = isAnagram(firstWord, secondWord);
-	    	System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+	    boolean ret = isAnagram(firstWord, secondWord);
+	    System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
 	}
 
 	static boolean isAnagram(String firstWord, String secondWord) {
-        	int arrayIndex = 0;
-        	int numberOfSameLettersInFirstWord =0;
-        	int numberOfSameLettersInSecondWord =0;
+            int arrayIndex = 0;
+            int numberOfSameLettersInFirstWord =0;
+            int numberOfSameLettersInSecondWord =0;
         
-        	String[] arrayOfFirstWord = firstWord.toLowerCase().split("");
-        	String[] arrayOfSecondWord = secondWord.toLowerCase().split("");
+            String[] arrayOfFirstWord = firstWord.toLowerCase().split("");
+            String[] arrayOfSecondWord = secondWord.toLowerCase().split("");
         
-        	while (arrayIndex < firstWord.length()) {
-
-        		if (arrayOfFirstWord.length != arrayOfSecondWord.length) {
-        			break;
-        		}
-        		String letterToSearch = arrayOfFirstWord[arrayIndex];
-        	
-        		for (int i = 0; i < arrayOfFirstWord.length; i++) {
-        			if (letterToSearch.equals(arrayOfFirstWord[i])) {
-        				numberOfSameLettersInFirstWord++;
-        			for (int j = 0; j < arrayOfFirstWord.length; j++) {
-        				if (letterToSearch.equals(arrayOfSecondWord[j])) {
-        					numberOfSameLettersInSecondWord++;
-        				}
-        			}
-        			}
-            		}	
-        	
-        		numberOfSameLettersInSecondWord = numberOfSameLettersInSecondWord / numberOfSameLettersInFirstWord;
-        		if (lettersAreNotSame(numberOfSameLettersInFirstWord, numberOfSameLettersInSecondWord, arrayIndex, firstWord, secondWord)) {
-        			return false;
-        		}	 
-        		if (arrayIndex == arrayOfFirstWord.length-1 && arrayIndex == arrayOfSecondWord.length-1) {
-        			return true;
-        		}
-            		arrayIndex ++;
-            		numberOfSameLettersInFirstWord = 0;
-            		numberOfSameLettersInSecondWord = 0;
+            while (arrayIndex < firstWord.length()) {
+        	if (arrayOfFirstWord.length != arrayOfSecondWord.length) {
+        	    break;
         	}
-		return false;
-	}
-	
-	static boolean lettersAreNotSame(int sameNumber1, int sameNumber2, int arrayIndex, String firstWord, String secondWord) {
-		
-		boolean lettersAreNotSame = false;
-		
-		if (sameNumber1 != sameNumber2) {
-			lettersAreNotSame = true;
-		}
-		return lettersAreNotSame;
+        	String letterToSearch = arrayOfFirstWord[arrayIndex];
+        	
+        	for (int i = 0; i < arrayOfFirstWord.length; i++) {
+        	     if (letterToSearch.equals(arrayOfFirstWord[i])) {
+        		 numberOfSameLettersInFirstWord++;
+        	     for (int j = 0; j < arrayOfFirstWord.length; j++) {
+        		  if (letterToSearch.equals(arrayOfSecondWord[j])) {
+        		      numberOfSameLettersInSecondWord++;
+        		      }
+        	     }
+        	     }
+                }
+        	
+        	numberOfSameLettersInSecondWord = numberOfSameLettersInSecondWord / numberOfSameLettersInFirstWord;
+        	
+        	if (numberOfSameLettersInFirstWord != numberOfSameLettersInSecondWord) {
+        		return false;
+        	}	
+        	if (arrayIndex == arrayOfFirstWord.length-1 && arrayIndex == arrayOfSecondWord.length-1) {
+        		return true;
+        	}
+                arrayIndex ++;
+                numberOfSameLettersInFirstWord = 0;
+                numberOfSameLettersInSecondWord = 0;
+             }
+	     return false;
 	}
 }
-
