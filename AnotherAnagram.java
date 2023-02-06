@@ -5,21 +5,21 @@ public class AnotherAnagram {
 		Scanner scanner = new Scanner(System.in);
 		
 		String firstWord = scanner.next();
-        String secondWord = scanner.next();
+        	String secondWord = scanner.next();
         
-        scanner.close();
+        	scanner.close();
         
-	    boolean ret = isAnagram(firstWord, secondWord);
-	    System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+	    	boolean ret = isAnagram(firstWord, secondWord);
+	    	System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
 	}
 
 	static boolean isAnagram(String firstWord, String secondWord) {
-        int arrayIndex = 0;
-        int numberOfSameLettersInFirstWord =0;
-        int numberOfSameLettersInSecondWord =0;
+        	int arrayIndex = 0;
+        	int numberOfSameLettersInFirstWord =0;
+        	int numberOfSameLettersInSecondWord =0;
         
-        String[] arrayOfFirstWord = firstWord.toLowerCase().split("");
-        String[] arrayOfSecondWord = secondWord.toLowerCase().split("");
+        	String[] arrayOfFirstWord = firstWord.toLowerCase().split("");
+        	String[] arrayOfSecondWord = secondWord.toLowerCase().split("");
         
         while (arrayIndex < firstWord.length()) {
 
@@ -37,7 +37,7 @@ public class AnotherAnagram {
         			}
         		}
         		}
-            }
+            	}
         	
         	numberOfSameLettersInSecondWord = numberOfSameLettersInSecondWord / numberOfSameLettersInFirstWord;
         	if (lettersAreNotSame(numberOfSameLettersInFirstWord, numberOfSameLettersInSecondWord, arrayIndex, firstWord, secondWord)) {
@@ -46,10 +46,10 @@ public class AnotherAnagram {
         	if (arrayIndex == arrayOfFirstWord.length-1 && arrayIndex == arrayOfSecondWord.length-1) {
         		return true;
         	}
-            arrayIndex ++;
-            numberOfSameLettersInFirstWord = 0;
-            numberOfSameLettersInSecondWord = 0;
-        }
+            	arrayIndex ++;
+            	numberOfSameLettersInFirstWord = 0;
+            	numberOfSameLettersInSecondWord = 0;
+        	}
 		return false;
 	}
 	
