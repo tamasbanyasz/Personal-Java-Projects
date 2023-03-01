@@ -9,6 +9,7 @@ public class SnailLetterMatrix {
 	static final int size = 4;
 	static final String sentence = "coding good";
 
+	
 	public static void main(String[] args) {
 		String[] words = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k","l","m","n","o","p"};
 		String[][] matrixMap = new String[size][size];
