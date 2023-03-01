@@ -9,6 +9,6 @@ public class NumberSystemCalculator {
 		
 		number.octalInDecimal(2034);
 		
+		number.hexaInDecimal("A5F");
 	}
-
 }
