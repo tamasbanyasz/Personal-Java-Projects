@@ -7,7 +7,6 @@ public class TicTacToe {
 		static final int mapSize = 3;
 		public static int indexNumberOfPlayer = 0;
 
-
 	public static void main(String[] args) {
 		String[] players = {"O", "X"};
 		playerInput playerInput = new playerInput();
