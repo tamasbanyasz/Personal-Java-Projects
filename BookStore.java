@@ -23,5 +23,4 @@ public class BookStore {
 	static void cashier(ShoppingBasket<? extends Book> book) {
 		System.out.println("Book is at the cashier: " + book.getItem());
 	}
-
 }
